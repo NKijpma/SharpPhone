@@ -11,20 +11,19 @@ namespace SharpPhone
 
         private void BtnAddPhone_Click(object sender, EventArgs e)
         {
+            Form FrmAddEdit = new FrmAddEdit();
+            FrmAddEdit.ShowDialog();
+
+            
 
         }
 
-        private void BtnModify_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void BtnDelete_Click(object sender, EventArgs e)
         {
 
         }
-
-        private void ListPhones_SelectedIndexChanged(object sender, EventArgs e)
+        private void BtnModify_Click(object sender, EventArgs e)
         {
 
         }
