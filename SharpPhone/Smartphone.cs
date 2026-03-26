@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace SharpPhone
+﻿namespace SharpPhone
 {
-    internal class Smartphone
+    public class SmartPhone
     {
         public int Id { get; set; }
         public string? Brand { get; set; }
@@ -12,6 +8,23 @@ namespace SharpPhone
         public int StorageSizeMb { get; set; }
         public decimal Price { get; set; }
         public int Stock { get; set; }
+
+        public SmartPhone(int id, string? brand, string? model, int storageSizeMb, decimal price, int stock)
+        {
+            Id = id;
+            Brand = brand;
+            Model = model;
+            StorageSizeMb = storageSizeMb;
+            Price = price;
+            Stock = stock;
+        }
+
+        public SmartPhone() { }
+
+        public override string ToString()
+        {
+            return $"{Brand} {Model}";
+        }
 
     }
 }

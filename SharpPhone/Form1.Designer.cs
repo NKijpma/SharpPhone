@@ -22,30 +22,12 @@
             BtnDelete = new Button();
             ListPhones = new ListBox();
             SplitContainer1 = new SplitContainer();
+            LstViewPhones = new ListView();
             ((System.ComponentModel.ISupportInitialize)SplitContainer1).BeginInit();
+            SplitContainer1.Panel1.SuspendLayout();
+            SplitContainer1.Panel2.SuspendLayout();
             SplitContainer1.SuspendLayout();
             SuspendLayout();
-
-            // 
-            // SplitContainer1
-            // 
-            SplitContainer1.Dock = DockStyle.Fill;
-            SplitContainer1.Location = new Point(0, 0);
-            SplitContainer1.Name = "SplitContainer1";
-            SplitContainer1.Size = new Size(800, 450);
-            SplitContainer1.SplitterDistance = 400; 
-            SplitContainer1.TabIndex = 4;
-
-            // 
-            // ListPhones panel 2 right
-            // 
-            ListPhones.BackColor = Color.FromArgb(28, 98, 86);
-            ListPhones.ForeColor = Color.FromArgb(255, 231, 138);
-            ListPhones.Dock = DockStyle.Fill;
-            ListPhones.Name = "ListPhones";
-            ListPhones.TabIndex = 3;
-            SplitContainer1.Panel2.Controls.Add(ListPhones);
-
             // 
             // BtnAddPhone
             // 
@@ -59,7 +41,6 @@
             BtnAddPhone.Text = "+";
             BtnAddPhone.UseVisualStyleBackColor = false;
             BtnAddPhone.Click += BtnAddPhone_Click;
-
             // 
             // BtnModify
             // 
@@ -72,7 +53,6 @@
             BtnModify.Text = "modify";
             BtnModify.UseVisualStyleBackColor = false;
             BtnModify.Click += BtnModify_Click;
-
             // 
             // BtnDelete
             // 
@@ -85,12 +65,46 @@
             BtnDelete.Text = "del";
             BtnDelete.UseVisualStyleBackColor = false;
             BtnDelete.Click += BtnDelete_Click;
-
-            // Add buttons to Panel1 left
+            // 
+            // ListPhones
+            // 
+            ListPhones.BackColor = Color.FromArgb(28, 98, 86);
+            ListPhones.Dock = DockStyle.Fill;
+            ListPhones.ForeColor = Color.FromArgb(255, 231, 138);
+            ListPhones.Location = new Point(0, 0);
+            ListPhones.Name = "ListPhones";
+            ListPhones.Size = new Size(396, 450);
+            ListPhones.TabIndex = 3;
+            // 
+            // SplitContainer1
+            // 
+            SplitContainer1.Dock = DockStyle.Fill;
+            SplitContainer1.Location = new Point(0, 0);
+            SplitContainer1.Name = "SplitContainer1";
+            // 
+            // SplitContainer1.Panel1
+            // 
+            SplitContainer1.Panel1.Controls.Add(LstViewPhones);
             SplitContainer1.Panel1.Controls.Add(BtnAddPhone);
             SplitContainer1.Panel1.Controls.Add(BtnModify);
             SplitContainer1.Panel1.Controls.Add(BtnDelete);
-
+            // 
+            // SplitContainer1.Panel2
+            // 
+            SplitContainer1.Panel2.Controls.Add(ListPhones);
+            SplitContainer1.Size = new Size(800, 450);
+            SplitContainer1.SplitterDistance = 400;
+            SplitContainer1.TabIndex = 4;
+            // 
+            // LstViewPhones
+            // 
+            LstViewPhones.BackColor = Color.FromArgb(28, 98, 86);
+            LstViewPhones.ForeColor = Color.FromArgb(255, 231, 138);
+            LstViewPhones.Location = new Point(135, 281);
+            LstViewPhones.Name = "LstViewPhones";
+            LstViewPhones.Size = new Size(151, 121);
+            LstViewPhones.TabIndex = 3;
+            LstViewPhones.UseCompatibleStateImageBehavior = false;
             // 
             // Form1
             // 
@@ -101,7 +115,8 @@
             Controls.Add(SplitContainer1);
             Name = "Form1";
             Text = "SharpPhone";
-
+            SplitContainer1.Panel1.ResumeLayout(false);
+            SplitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)SplitContainer1).EndInit();
             SplitContainer1.ResumeLayout(false);
             ResumeLayout(false);
@@ -114,5 +129,6 @@
         private Button BtnDelete;
         private ListBox ListPhones;
         private SplitContainer SplitContainer1;
+        private ListView LstViewPhones;
     }
 }
