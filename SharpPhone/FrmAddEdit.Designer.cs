@@ -27,21 +27,26 @@
             Label4 = new Label();
             TxtPrice = new TextBox();
             BtnCancel = new Button();
+            TxtStock = new TextBox();
+            label5 = new Label();
             SuspendLayout();
             // 
             // BtnOk
             // 
+            BtnOk.BackColor = Color.FromArgb(255, 231, 138);
+            BtnOk.ForeColor = Color.FromArgb(28, 98, 86);
             BtnOk.Location = new Point(652, 365);
             BtnOk.Name = "BtnOk";
             BtnOk.Size = new Size(94, 29);
             BtnOk.TabIndex = 0;
             BtnOk.Text = "Ok";
-            BtnOk.UseVisualStyleBackColor = true;
+            BtnOk.UseVisualStyleBackColor = false;
             BtnOk.Click += BtnOk_Click;
             // 
             // Label1
             // 
             Label1.AutoSize = true;
+            Label1.ForeColor = Color.FromArgb(255, 231, 138);
             Label1.Location = new Point(73, 43);
             Label1.Name = "Label1";
             Label1.Size = new Size(48, 20);
@@ -58,6 +63,7 @@
             // Label2
             // 
             Label2.AutoSize = true;
+            Label2.ForeColor = Color.FromArgb(255, 231, 138);
             Label2.Location = new Point(73, 86);
             Label2.Name = "Label2";
             Label2.Size = new Size(52, 20);
@@ -74,11 +80,12 @@
             // Label3
             // 
             Label3.AutoSize = true;
-            Label3.Location = new Point(85, 128);
+            Label3.ForeColor = Color.FromArgb(255, 231, 138);
+            Label3.Location = new Point(68, 131);
             Label3.Name = "Label3";
-            Label3.Size = new Size(36, 20);
+            Label3.Size = new Size(58, 20);
             Label3.TabIndex = 5;
-            Label3.Text = "Size";
+            Label3.Text = "MBSize";
             // 
             // TxtSize
             // 
@@ -90,6 +97,7 @@
             // Label4
             // 
             Label4.AutoSize = true;
+            Label4.ForeColor = Color.FromArgb(255, 231, 138);
             Label4.Location = new Point(85, 170);
             Label4.Name = "Label4";
             Label4.Size = new Size(41, 20);
@@ -105,19 +113,42 @@
             // 
             // BtnCancel
             // 
+            BtnCancel.BackColor = Color.FromArgb(255, 231, 138);
+            BtnCancel.ForeColor = Color.FromArgb(28, 98, 86);
+            BtnCancel.ImageAlign = ContentAlignment.MiddleRight;
             BtnCancel.Location = new Point(535, 365);
             BtnCancel.Name = "BtnCancel";
             BtnCancel.Size = new Size(94, 29);
             BtnCancel.TabIndex = 9;
             BtnCancel.Text = "Cancel";
-            BtnCancel.UseVisualStyleBackColor = true;
+            BtnCancel.UseVisualStyleBackColor = false;
             BtnCancel.Click += BtnCancel_Click;
+            // 
+            // TxtStock
+            // 
+            TxtStock.Location = new Point(127, 214);
+            TxtStock.Name = "TxtStock";
+            TxtStock.Size = new Size(125, 27);
+            TxtStock.TabIndex = 10;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.ForeColor = Color.FromArgb(255, 231, 138);
+            label5.Location = new Point(76, 217);
+            label5.Name = "label5";
+            label5.Size = new Size(45, 20);
+            label5.TabIndex = 11;
+            label5.Text = "Stock";
             // 
             // FrmAddEdit
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(41, 1, 42);
             ClientSize = new Size(800, 450);
+            Controls.Add(label5);
+            Controls.Add(TxtStock);
             Controls.Add(BtnCancel);
             Controls.Add(TxtPrice);
             Controls.Add(Label4);
@@ -146,5 +177,7 @@
         private Label Label4;
         private TextBox TxtPrice;
         private Button BtnCancel;
+        private TextBox TxtStock;
+        private Label label5;
     }
 }

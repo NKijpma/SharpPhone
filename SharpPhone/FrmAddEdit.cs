@@ -7,23 +7,37 @@ namespace SharpPhone
         public FrmAddEdit()
         {
             InitializeComponent();
+            this.Load += (s, e) =>
+            {
+                if (Phone == null) return;
+                TxtBrand.Text = Phone.Brand;
+                TxtModel.Text = Phone.Model;
+                TxtSize.Text = Phone.StorageSizeMb.ToString();
+                TxtPrice.Text = Phone.Price.ToString();
+                TxtStock.Text = Phone.Stock.ToString();
+            };
         }
 
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
-        public SmartPhone Phone { get; set; }
+        public SmartPhone? Phone { get; set; }
 
         private void BtnOk_Click(object sender, EventArgs e)
         {
 
-            if (!int.TryParse(TxtSize.Text, out int size))
+            if (!int.TryParse(TxtSize.Text, out int StorageSize))
             {
-                MessageBox.Show("Please enter a valid number for storage size.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Please enter a valid storage size in MB.", "Input Error", MessageBoxButtons.OK);
                 return;
             }
 
-            if (!decimal.TryParse(TxtPrice.Text, out decimal price))
+            if (!decimal.TryParse(TxtPrice.Text, out decimal Price))
             {
-                MessageBox.Show("Please enter a valid price.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Please enter a valid price.", "Input Error", MessageBoxButtons.OK);
+                return;
+            }
+            if (!int.TryParse(TxtStock.Text, out int Stock))
+            {
+                MessageBox.Show("Please enter a valid stock amount.", "Input Error", MessageBoxButtons.OK);
                 return;
             }
 
@@ -31,34 +45,23 @@ namespace SharpPhone
             {
                 Brand = TxtBrand.Text,
                 Model = TxtModel.Text,
-                StorageSizeMb = size,
-                Price = price,
-                Stock = 0
+                StorageSizeMb = StorageSize,
+                Price = Price,
+                Stock = Stock
             };
+            DialogResult = DialogResult.OK;
+            this.Close();
 
         }
-        public SmartPhone GetPhoneFromInput()
-        {
-            return new SmartPhone
-            {
-                Brand = TxtBrand.Text,
-                Model = TxtModel.Text,
-                StorageSizeMb = int.TryParse(TxtSize.Text, out int size) ? size : 0,
-                Price = decimal.TryParse(TxtPrice.Text, out decimal price) ? price : 0m
-            };
-        }
-
 
         private void BtnCancel_Click(object sender, EventArgs e)
         {
-            DialogResult = new();
             DialogResult = MessageBox.Show(
                 "Are you sure you want to cancel?\n All unsaved changes will be lost.",
                 "Confirm Cancel",
-                MessageBoxButtons.YesNo,
-                MessageBoxIcon.Warning
+                MessageBoxButtons.OKCancel
             );
-            if (DialogResult == DialogResult.Yes)
+            if (DialogResult == DialogResult.OK)
             {
                 this.Close();
             }

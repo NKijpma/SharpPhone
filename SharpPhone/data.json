@@ -1,0 +1,28 @@
+{
+  "Phones": [
+    {
+      "Id": 0,
+      "Brand": "SamSang",
+      "Model": "Blackhole E55",
+      "StorageSizeMb": 128000,
+      "Price": 128.92,
+      "Stock": 7987
+    },
+    {
+      "Id": 0,
+      "Brand": "Apple",
+      "Model": "iPhone 19 Pro Max",
+      "StorageSizeMb": 512000,
+      "Price": 1099.00,
+      "Stock": 909
+    }
+  ],
+  "Users": [
+    {
+      "Username": "admin",
+      "Password": "admin",
+      "FailedAttempts": 0,
+      "Locked": false
+    }
+  ]
+}
